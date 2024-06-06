@@ -2,6 +2,14 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 
+# Write directly to the app
+st.title(":cup_with_straw: DAWB Workshop App :sunglasses:")
+st.write(
+    """Fruits play an important role in the seed dispersal of many plant species!
+    **:orange[ORANGE]**
+    """
+)
+
 name_on_order = st.text_input('Name on Smoothie:')
 st.write('The name on your smoothie will be', name_on_order)
 cnx=st.connection("snowflake")
