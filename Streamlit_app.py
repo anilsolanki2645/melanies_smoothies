@@ -1,14 +1,12 @@
-# Import python packages
+#Import python packages
 import streamlit as st
 from snowflake.snowpark.functions import col
 
-# Write directly to the app
-st.title(":cup_with_straw: DAWB Workshop App :sunglasses:")
+#Write directly to the app
+st.title(":cup_with_straw: Customize Your Smoothie :cup_with_straw:")
 st.write(
-    """Fruits play an important role in the seed dispersal of many plant species!
-    **:orange[ORANGE]**
-    """
-)
+    """Choose the fruits you want in your custom Smoothie!
+    """)
 
 name_on_order = st.text_input('Name on Smoothie:')
 st.write('The name on your smoothie will be', name_on_order)
@@ -42,8 +40,3 @@ time_to_insert = st.button('Submit Order')
 if time_to_insert:
     session.sql(my_insert_stmt).collect()
     st.success("""Your Smoothie is ordered """+name_on_order, icon="✅")
-
-time_to_insert = st.button('Submit Order')
-if time_to_insert:
-    session.sql(my_insert_stmt).collect()
-    st.success('Your Smoothie is ordered!' + ' ' + name_on_order, icon="✅")
